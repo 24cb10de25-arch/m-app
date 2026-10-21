@@ -195,4 +195,6 @@ def payroll():
     return BASE.replace("{{content}}",content).replace("{{d1}}","").replace("{{d2}}","").replace("{{d3}}","").replace("{{d4}}","active")
 
 if __name__=='__main__':
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0' , port=port)
